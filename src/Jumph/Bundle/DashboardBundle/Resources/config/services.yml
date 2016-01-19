@@ -1,0 +1,8 @@
+services:
+    jumph_dashboard.dashboard_menu_listener:
+        class: Jumph\Bundle\DashboardBundle\EventListener\DashboardMenuListener
+        tags:
+          - { name: kernel.event_listener, event: jumph.build_menu, method: onMenuDashboard }
+    jumph_dashboard.dashboard_block_container:
+        class: Jumph\Bundle\DashboardBundle\Service\DashboardBlockContainer
+

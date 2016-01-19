@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="bg-black">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Jumph{% endblock %}</title>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+        {% stylesheets  filter='cssrewrite'
+            '%kernel.root_dir%/../vendor/components/bootstrap/dist/css/bootstrap.css'
+            '%kernel.root_dir%/../vendor/components/fontawesome/css/font-awesome.css'
+            '%kernel.root_dir%/../vendor/components/admin-lte/css/AdminLTE.css'
+            '%kernel.root_dir%/../vendor/components/bootstrap-datepicker/css/datepicker3.css'
+            '@JumphAppBundle/Resources/public/css/jumph.css'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    </head>
+
+    <body class="bg-black">
+        {% block content %}
+        {% endblock %}
+
+        {% javascripts
+            '%kernel.root_dir%/../vendor/components/jquery/dist/jquery.min.js'
+            '%kernel.root_dir%/../vendor/components/bootstrap/dist/js/bootstrap.min.js'
+            '%kernel.root_dir%/../vendor/components/admin-lte/js/AdminLTE/app.js'
+            '%kernel.root_dir%/../vendor/components/bootstrap-datepicker/js/bootstrap-datepicker.js'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    </body>
+</html>
